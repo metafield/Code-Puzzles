@@ -1,3 +1,3 @@
-export class LinkedListNode<T, K> {
-  constructor(public data: T, public next: K) {}
+export class LinkedListNode<T> {
+  constructor(public data: T, public next: LinkedListNode<T> = null) {}
 }
