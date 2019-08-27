@@ -5,15 +5,19 @@ export class LinkedList<T> {
 
   printSelf(): void {
     let curNode = this.head;
+    let output = "";
 
     while (curNode.next !== null) {
+      output += curNode.val;
       curNode = curNode.next;
-      console.log(curNode.data);
     }
+
+    output += curNode.val;
+    console.log(output);
   }
 
-  add(data: T) {
-    const newNode = new LinkedListNode<T>(data);
+  add(val: T) {
+    const newNode = new LinkedListNode<T>(val);
 
     // List is already Empty
     if (this.head === null) {
