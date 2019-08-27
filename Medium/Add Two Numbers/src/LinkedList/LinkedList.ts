@@ -1,12 +1,13 @@
 import { LinkedListNode } from "./LinkedListNode";
 
 export class LinkedList<T> {
-  private head: null | LinkedListNode<T>;
+  private head: null | LinkedListNode<T> = null;
 
   printSelf(): void {
     let curNode = this.head;
 
     while (curNode.next !== null) {
+      curNode = curNode.next;
       console.log(curNode.data);
     }
   }
