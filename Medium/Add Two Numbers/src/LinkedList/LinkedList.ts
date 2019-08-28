@@ -1,37 +1,42 @@
-import { LinkedListNode } from "./LinkedListNode";
+import { LinkedListNode } from "./LinkedListNode"
 
 export class LinkedList<T> {
-  private head: null | LinkedListNode<T> = null;
+  private head: null | LinkedListNode<T> = null
 
-  printSelf(): void {
-    let curNode = this.head;
-    let output = "";
+  // TODO: this should be generic
+  getNumber(): number {
+    let curNode = this.head
+    let output = ""
 
-    while (curNode.next !== null) {
-      output += curNode.val;
-      curNode = curNode.next;
+    if (curNode === null) {
+      throw new Error("Linked List empty")
     }
 
-    output += curNode.val;
-    console.log(output);
+    while (curNode.next !== null) {
+      output += curNode.val
+      curNode = curNode.next
+    }
+
+    output += curNode.val
+    return Number(output)
   }
 
-  add(val: T) {
-    const newNode = new LinkedListNode<T>(val);
+  push(val: T) {
+    const newNode = new LinkedListNode<T>(val)
 
     // List is already Empty
     if (this.head === null) {
-      this.head = newNode;
+      this.head = newNode
     } else {
       // start at the head and go towards the tail until null
-      let curNode = this.head;
+      let curNode = this.head
 
       while (curNode.next !== null) {
-        curNode = curNode.next;
+        curNode = curNode.next
       }
 
       // add the new node as the new tail
-      curNode.next = newNode;
+      curNode.next = newNode
     }
   }
 }
