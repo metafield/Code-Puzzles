@@ -3,6 +3,8 @@ import { LinkedListNode } from "./LinkedListNode"
 export class LinkedList<T> {
   private head: null | LinkedListNode<T> = null
 
+  // TODO: reverse():LinkedList
+
   constructor(public values: Array<T>) {
     values.forEach(value => this.push(value))
   }
