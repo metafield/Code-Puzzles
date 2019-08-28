@@ -5,12 +5,12 @@ export class LinkedList<T> {
 
   // TODO: this should be generic
   getNumber(): number {
-    let curNode = this.head
-    let output = ""
-
-    if (curNode === null) {
+    if (this.head === null) {
       throw new Error("Linked List empty")
     }
+
+    let curNode = this.head
+    let output = ""
 
     while (curNode.next !== null) {
       output += curNode.val

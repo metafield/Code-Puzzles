@@ -1,1 +1,1 @@
-import { LinkedList } from "./src/LinkedList/LinkedList";
+import { LinkedList } from "./src/LinkedList/LinkedList"
