@@ -10,7 +10,6 @@ export class Helpers {
       lastDigit = number % 10
       reverse = reverse * 10 + lastDigit
       number = ~~(number / 10)
-      console.log(reverse)
     }
 
     return reverse

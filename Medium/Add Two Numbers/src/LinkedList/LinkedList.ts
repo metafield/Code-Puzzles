@@ -3,6 +3,10 @@ import { LinkedListNode } from "./LinkedListNode"
 export class LinkedList<T> {
   private head: null | LinkedListNode<T> = null
 
+  constructor(public values: Array<T>) {
+    values.forEach(value => this.push(value))
+  }
+
   // TODO: this should be generic
   getNumber(): number {
     if (this.head === null) {
